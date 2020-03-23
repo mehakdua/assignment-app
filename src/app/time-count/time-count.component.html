@@ -1,0 +1,22 @@
+<div>
+    <div class="block">
+        Timer:{{counter}}
+    </div>
+    <div  class="block">
+        <input type="text"  #timer />
+        <button (click)="startCounter(timer.value,!toggle)">Start/Pause</button>
+        <button>Reset</button>
+        <div *ngFor="let item of pauseList">{{item}}</div>
+    </div>
+</div>
+
+<div>
+    <div  class="block">
+        <div *ngFor="let item of startPauseList">{{item}}</div>
+    </div>
+    
+    <div  class="block">
+        Started {{startPauseList.length - pauseList.length }}
+        Paused {{pauseList.length}}
+    </div>
+</div>
