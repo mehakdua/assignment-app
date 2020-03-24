@@ -7,11 +7,11 @@
     <div class="col-sm timer">
       <div class="form-group">
         <label for="timer">Timer</label>
-        <input type="text" #timer class="form-control" id="timer" aria-describedby="emailHelp">
+        <input type="text" [(ngModel)]="timers" #timer class="form-control" id="timer" aria-describedby="emailHelp">
         <small id="emailHelp" class="form-text text-muted">Enter time limit</small>
       </div>
       <div class="row btn-wrapper">
-        <button (click)="startCounter(timer.value,!toggle)" class="btn btn-primary">Start/Pause</button>
+        <button (click)="startCounter(timer.value,!toggle)" class="btn btn-primary"><span *ngIf="!toggle else pause">Start</span><ng-template #pause><span>Pause</span></ng-template></button>
         <button (click)="resetCounter(timer.value,!toggle)" class="btn btn-danger">Reset</button>
       </div>
       <div  *ngFor="let item of pauseList" class="alert alert-primary pause-log" role="alert">

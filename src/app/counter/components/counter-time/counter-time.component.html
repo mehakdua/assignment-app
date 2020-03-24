@@ -4,7 +4,7 @@
     <small id="emailHelp" class="form-text text-muted">Enter time limit</small>
   </div>
   <div class="row btn-wrapper">
-    <button (click)="startCounter(timer.value,!toggle)" class="btn btn-primary">Start/Pause</button>
+    <button (click)="startCounter(timer.value,!toggle)" class="btn btn-primary"><span *ngIf="!toggle else pause">Start</span><ng-template #pause><span>Pause</span></ng-template></button>
     <button (click)="resetCounter(timer.value,!toggle)" class="btn btn-danger">Reset</button>
   </div>
   

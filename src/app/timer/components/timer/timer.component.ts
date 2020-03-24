@@ -13,6 +13,7 @@ counterReset =true;
 pauseList = [];
 startPauseList = [];
 observable = interval(1000);
+timers:string;
 observer:Subscription;
   constructor() { }
   ngOnInit() {
@@ -46,6 +47,7 @@ observer:Subscription;
     this.startPauseList = [];
     this.toggle = false;
     this.counterReset =true;
+    this.timers ='';
   }
   ngOnDestroy(){
     if(this.observer){
