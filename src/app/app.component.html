@@ -1,10 +1,14 @@
-
-<!--here timer is sibling to time-count-->
-<app-show-count></app-show-count>
-
-<!--Example where timer and text box are in same component-->
-<app-time-count></app-time-count>
-
-
-<!--Name list example>-->
-<app-name-list></app-name-list>
+<div class="container parent-wrapper">
+    <div class="row">
+      <div class="col-sm text-center font-weight-bold">
+        <a routerLink="/grid" routerLinkActive="active">Data Grid</a>
+      </div>
+      <div class="col-sm text-center font-weight-bold">
+        <a routerLink="/timer" routerLinkActive="active">Timer </a>
+      </div>
+      <div class="col-sm text-center font-weight-bold">
+        <a routerLink="/counter" routerLinkActive="active">Timer (with services and event emitters)</a>
+      </div>
+    </div>
+</div>
+<router-outlet></router-outlet>

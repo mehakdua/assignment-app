@@ -1,0 +1,25 @@
+<h4 class="text-center">Lazy loaded Module</h4>
+<div class="container timer-wrapper">
+  <div class="row timer-block">
+    <div class="col-sm timer">
+      <app-show-counter></app-show-counter>
+    </div>
+    <div class="col-sm timer">
+      <app-counter-time (paused) = 'addtoPauseList($event)' (startPause) = 'addtoStartPauseList($event)' ></app-counter-time>
+      <div  *ngFor="let item of pauseList" class="alert alert-primary pause-log" role="alert">
+        {{item}}
+      </div>
+    </div>
+  </div>
+ <div class="row info-wrapper">
+      <div class="col-sm">
+        <div *ngFor="let item of startPauseList" class="alert alert-secondary" role="alert">
+          {{item}}
+        </div>
+      </div>
+      <div class="col-sm">
+         <div  class="text-center font-weight-bold"> {{startPauseList.length - pauseList.length }}  Started </div>
+         <div class="text-center font-weight-bold"> {{pauseList.length}}  Paused </div>
+      </div>
+    </div>
+</div>

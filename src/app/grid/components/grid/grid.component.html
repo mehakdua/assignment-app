@@ -1,0 +1,24 @@
+
+<div class=table-wrapper>
+  <table class="table">
+    <caption>Click on any of the column headers to sort and reset</caption>
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col"  *ngFor="let h of header" (click)="sortList(h)">{{h}}<i class="fas" [ngClass]="{'fa-arrow-up':this.selectedIndex%3 == 1,
+          'fa-arrow-down':this.selectedIndex%3 == 2,
+          'fa-arrows-alt-h':this.selectedIndex%3 == 0}"></i></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let d of data |sortItems:selectedName :selectedIndex:originalData">
+        <td>{{d.name}}</td>
+        <td>{{d.class}}</td>
+        <td>{{d.section}}</td>
+        <td>{{d.sub1}}</td>
+        <td>{{d.sub2}}</td>
+        <td>{{d.sub3}}</td>
+    </tr>
+    </tbody>
+  </table>
+  
+</div>

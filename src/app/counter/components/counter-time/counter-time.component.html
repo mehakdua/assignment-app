@@ -1,0 +1,10 @@
+  <div class="form-group">
+    <label for="timer">Timer</label>
+    <input type="text" #timer class="form-control" id="timer" aria-describedby="emailHelp">
+    <small id="emailHelp" class="form-text text-muted">Enter time limit</small>
+  </div>
+  <div class="row btn-wrapper">
+    <button (click)="startCounter(timer.value,!toggle)" class="btn btn-primary">Start/Pause</button>
+    <button (click)="resetCounter(timer.value,!toggle)" class="btn btn-danger">Reset</button>
+  </div>
+  

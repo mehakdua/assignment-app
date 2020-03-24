@@ -1,22 +1,25 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
-import { NameListComponent } from './name-list/name-list.component';
-import { SortItemsPipe } from './sort-items.pipe';
-import { ShowCountComponent } from './show-count/show-count.component';
-import { TimeCountComponent } from './time-count/time-count.component';
-
+import { GridModule } from './grid/grid.module';
+import {Route,RouterModule} from '@angular/router';
+import { SharedModule } from './shared/shared.module';
+import { TimerModule } from './timer/timer.module';
+const routes:Route[] = [
+  {path: '',   redirectTo: '/grid', pathMatch: 'full' },
+     {path: 'counter',loadChildren:'./counter/counter.module#CounterModule'
+    }
+  ]; 
 @NgModule({
   declarations: [
-    AppComponent,
-    NameListComponent,
-    SortItemsPipe,
-    ShowCountComponent,
-    TimeCountComponent
+    AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    SharedModule,
+    GridModule,
+    TimerModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]

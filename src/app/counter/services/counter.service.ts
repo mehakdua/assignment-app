@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { interval, BehaviorSubject, Subject } from 'rxjs';
-
 @Injectable({
   providedIn: 'root'
 })
-export class TimerService {
+export class CounterService {
+
   private count = 0;
   public timer$:Subject<number> =new Subject<number>();
   constructor() { }
@@ -16,4 +16,5 @@ export class TimerService {
   get counter(){
     return this.count;
   }
+  
 }

@@ -1,17 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-name-list',
-  templateUrl: './name-list.component.html',
-  styleUrls: ['./name-list.component.css']
+  selector: 'app-grid',
+  templateUrl: './grid.component.html',
+  styleUrls: ['./grid.component.scss']
 })
-export class NameListComponent implements OnInit {
+export class GridComponent implements OnInit {
+
   data:any;
   selected ='';
+  classes:any;
   sortArr:any;
   originalData:any;
    selectedName:string;
-   selectedIndex:number=1;
+   selectedIndex:number=0;
   constructor() { }
   header:String[];
 
@@ -86,8 +88,15 @@ this.data= [
   ] 
   this.header =Object.keys(this.data[0]);
   this.originalData = [...this.data];
+  this.classes = {
+    'fa-arrow-up':this.selectedIndex%3 == 1,
+    'fa-arrow-down':this.selectedIndex%3 == 2,
+    'fa-arrows-alt-h':this.selectedIndex%3 == 0
+  }
   
 }
+
+
 //name and index
 sortList(h:string){
   if(this.selectedName === h){
@@ -97,4 +106,5 @@ sortList(h:string){
   }
   this.selectedName = h;
 }
+
 }
